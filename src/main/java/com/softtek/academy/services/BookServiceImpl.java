@@ -29,7 +29,10 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public boolean updateBook(Book book) {
-		// TODO Auto-generated method stub
+		if (this.validBook(book)) {
+			bookRepository.save(book);
+			return true;
+		}
 		return false;
 	}
 
@@ -42,6 +45,35 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public void createBook() {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public boolean validBook(Book book){
+		
+		if(book.getName() == null || book.getName().isEmpty()){
+			return false;}
+		
+		if(book.getAuthor() == null || book.getAuthor().isEmpty()){
+			return false;}
+		
+		if (book.getEditorial() == null || book.getEditorial().isEmpty()) {
+			return false;}
+		
+		if (book.getGenre() == null || book.getGenre().isEmpty()) {
+			return false;}
+	
+		if (book.getLanguage() == null || book.getLanguage().isEmpty()) {
+			return false;
+		}
+		
+		if (book.getYear() == null || book.getYear().compareTo(0L) == 0) {
+			return false;
+		}
+		
+		if (book.getId() == null) {
+			return false;
+		}
+		return true;
 		
 	}
 

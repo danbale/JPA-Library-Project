@@ -26,7 +26,7 @@
 
 	<bean id="jpaVendor"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-		<property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect" />
+		<property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect" />
 		<property name="showSql" value="true" />
 		<property name="generateDdl" value="true" />
 	</bean>
@@ -45,13 +45,12 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true"></property>
 		<property name="locations">
 			<list>
-				<value>project-${enviroment}.properties</value>
+				<value>classpath:META-INF/spring/project-${environment}.properties</value>
 			</list>
 
 		</property>
 	</bean>
-	
-	<beans profile="dataApp">
+		<beans profile="dataApp">
 		<bean id="dataSource"
 			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="${jdbc.database.driverClassName}" />

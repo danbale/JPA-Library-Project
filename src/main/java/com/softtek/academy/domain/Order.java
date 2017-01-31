@@ -25,6 +25,15 @@ public class Order extends Audit implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	
+	
+
+	public Order(Long id, User user) {
+		super();
+		this.id = id;
+		this.user = user;
+	}
 
 	@Override
 	public int hashCode() {

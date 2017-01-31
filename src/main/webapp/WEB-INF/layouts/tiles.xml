@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="DefaultTemplate" template="/WEB-INF/pages/home.jsp">
+		<put-attribute name="title" value="Spring JPA" />
+		<put-attribute name="header" value="/WEB-INF/pages/jsp/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/pages/jsp/menu.jsp">
+		</put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/pages/jsp/footer.jsp" />
+
+		<put-list-attribute name="javascripts">
+			<add-attribute value="/resources/styles/js/jquery-3.1.1.min.js" />
+			<add-attribute value="/resources/styles/js/bootstrap/js/bootstrap.min.js" />
+			<add-attribute value="/resources/styles/js/angular-1.4.8/angular/angular.min.js"></add-attribute>
+			<add-attribute value="/resources/styles/js/angular-1.4.8/js/angularUser.js"></add-attribute>
+					</put-list-attribute>
+
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/styles/js/bootstrap/css/bootstrap.min.css" />
+			<add-attribute value="/resources/styles/css/header.css" />
+			<add-attribute value="/resources/styles/css/footer.css" />
+			<add-attribute value="/resources/styles/css/Menu.css" />
+		</put-list-attribute>
+
+	</definition>
+
+	<definition name="home" extends="DefaultTemplate">
+
+	</definition>
+</tiles-definitions>

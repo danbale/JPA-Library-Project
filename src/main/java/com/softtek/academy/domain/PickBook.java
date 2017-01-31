@@ -12,13 +12,13 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "pickbook")
+@Table(name = "pick_book")
 public class PickBook extends Audit implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "pbook_id")
+	@Column(name = "pick_book_id")
 	private Long id;
 
 	@ManyToOne

@@ -28,8 +28,15 @@ public class User extends Audit implements Serializable {
 
 	@Column(name = "user_name")
 	private String name;
-	
-	
+
+	public User(Long id, String username, String password, String name) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.name = name;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -61,7 +68,7 @@ public class User extends Audit implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -109,6 +116,5 @@ public class User extends Audit implements Serializable {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + "]";
 	}
-
 
 }

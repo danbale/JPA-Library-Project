@@ -1,6 +1,6 @@
 CREATE TABLE book (
 book_id INTEGER NOT NULL, 
-book_name VARCHAR(30), 
+book_name VARCHAR(60), 
 book_genre VARCHAR(30),
 book_author VARCHAR(30),
 book_editor VARCHAR(30),
